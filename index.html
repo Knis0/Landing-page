@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Corpo Perfeito | Transforme Seu Corpo em 30 Dias</title>
+    <link href="https://pay.kuenha.com/8d314c10-4685-48b6-9ee6-deb49c97f02a" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF8C00; /* Amarelo-escuro */
+            --secondary: #FF5E00;
+            --dark: #1A1A1A;
+            --light: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            padding-top: 60px; /* Espaço para a barra fixa */
+            background: #f9f9f9;
+        }
+
+        /* BARRA DE ESCASSEZ FIXA */
+        .discount-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, #FF0000, #FF5E00);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: 900;
+            font-size: 16px;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        /* CABEÇALHO */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+            background: white;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .ebook-container {
+            max-width: 280px;
+            margin: 0 auto 30px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .ebook-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* BOTÃO CTA */
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 16px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(255,140,0,0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255,140,0,0.6);
+        }
+
+        /* SEÇÕES */
+        .section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark);
+        }
+
+        /* BENEFÍCIOS */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* CARROSSEL */
+        .proof-carousel {
+            max-width: 800px;
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+        
+        .carousel-nav {
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .carousel-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #ddd;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        
+        .carousel-dot.active {
+            background: var(--primary);
+        }
+
+        /* OFERTA */
+        .offer {
+            background: linear-gradient(135deg, #00A859, #00C853);
+            color: white;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 20px 0;
+            color: var(--light);
+        }
+
+        /* NOTIFICAÇÕES */
+        .notification {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            z-index: 1000;
+            transform: translateX(120%);
+            transition: transform 0.5s ease;
+        }
+
+        .notification-visible {
+            transform: translateX(0);
+        }
+
+        /* ANIMAÇÕES */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* WHATSAPP FIXO */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float img {
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+  <!-- BARRA DE ESCASSEZ FIXA -->
+    <div class="discount-bar">
+        <strong>DESCONTO DE 56%</strong> Termina em: | <span id="timer">10:00</span> 
+    </div>
+<!-- CABEÇALHO -->
+    <section class="hero">
+        <h1>CONQUISTE SEU CORPO DOS SONHOS</h1>
+        <p class="subtitle">Estratégias de treino que realmente funcionam e o plano nutricional que vai esculpir seu corpo e te deixar gostosa em 65 dias</p>
+        
+        <div class="ebook-container">
+            <img src="https://i.ibb.co/B5CLCwV5/ebook-corpo-perfeito.png" alt="Método Corpo Perfeito" class="ebook-img">
+        </div>
+        
+        <a href="https://pay.kuenha.com/8d314c10-4685-48b6-9ee6-deb49c97f02a" class="cta-button">QUERO! UM CORPO PERFEITO</a>
+    </section>
+
+       <!-- SOBRE O EBOOK -->
+    <section class="section">
+        <h2 class="section-title">O QUE VOCÊ VAI RECEBER</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Um método natural e seguro para crescer os glúteos</h3>
+                <p>Chega de arriscar a tua saúde com substâncias perigosas ou procedimentos caros. Aqui vais aprender como moldar teu corpo sem colocar tua vida em risco.
+</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Treinos caseiros que funcionam de verdade</h3>
+                <p>Se já tentaste vários vídeos na internet e nunca viste resultados, este eBook vai te mostrar o caminho certo e estruturado, sem perder tempo com treinos aleatórios.
+</p>
+            </div>
+            <div class="benefit-card">
+                <h3>A chave para o corpo que atrai olhares e aumenta a autoestima</h3>
+                <p>Não é só sobre ter glúteos grandes — é sobre te sentires gostosa, confiante e admirada. E tu mereces isso!
+</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- DEPOIMENTOS + CARROSSEL -->
+    <section class="section" style="background: #f9f9f9;">
+        <h2 class="section-title">NÓS NÃO PODEMOS PROVAR,MAS ELAS SIM</h2>
+        
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div class="testimonial-card">
+                <p>Essas fotos são a prova de que com dedicação e os treinos certos, o corpo transforma mesmo!
+Mulheres, com corpos diferentes, que começaram do zero e decidiram investir em si.
+Se elas conseguiram, tu também consegues!
+Não é mágia nem substâncias perigosas que podem prejudicam sua saúde, é consistência e força de vontade de mudar a regra do jogo.
+</p><p><strong></strong></p>
+            </div>
+            <div class="testimonial-card">
+                <p></p>
+                <p><strong></strong></p>
+            </div>
+        </div>
+
+        <!-- CARROSSEL DE PROVAS SOCIAIS --><div class="proof-carousel">
+        <div class="carousel-track">
+            <div class="carousel-slide">
+               <img src="https://i.ibb.co/kVkHRmyF/prova-1.jpg" alt="Resultado 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://i.ibb.co/yBYvBHTL/prova-2.jpg" alt="Resultado 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://i.ibb.co/cKtRbg07/prova-3.jpg" alt="Resultado 3">
+            </div>
+            <div class="carousel-slide">
+               <img src="https://i.ibb.co/SXQ0R1m7/prova-4.jpg" alt="Resultado 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://i.ibb.co/YFCZ6LSq/prova-5.jpg" alt="Resultado 5">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://i.ibb.co/F4jc47yk/prova-6.jpg" alt="Resultado 6">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://i.ibb.co/m5pzydGw/prova-7.jpg" alt="Resultado 7">
+            </div>
+            <div class="carousel-slide">
+               <img src="https://i.ibb.co/r20HnK6g/prova-8.jpg" alt="Resultado 8">
+                </div>
+                </div>
+                </div>
+                </div>
+                </div><div class="carousel-nav">
+            <span class="carousel-dot active" data-slide="0"></span>
+            <span class="carousel-dot" data-slide="1"></span>
+            <span class="carousel-dot" data-slide="2"></span>
+            <span class="carousel-dot" data-slide="3"></span>
+            <span class="carousel-dot" data-slide="4"></span>
+            <span class="carousel-dot" data-slide="5"></span>
+            <span class="carousel-dot" data-slide="6"></span>
+            <span class="carousel-dot" data-slide="7"></span>
+            
+            </div>
+        </div>
+        
+        <!-- SEÇÃO "SOBRE" COM BOTÃO ANIMADO -->
+<section class="section" style="background: white; padding: 60px 20px;">
+    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        
+         <!-- IMAGEM DO EBOOK -->
+       <img src="https://i.ibb.co/B5CLCwV5/ebook-corpo-perfeito.png" alt="Método Corpo Perfeito" 
+             style="width: 100%; max-width: 250px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        
+        <!-- TEXTO ORGANIZADO -->
+        <div style="text-align: left; font-size: 1.05rem; line-height: 1.7; color: #333;">
+            <!-- [TEXTO MANTIDO IGUAL...] -->
+            <div style="text-align: left; font-size: 1.05rem; line-height: 1.7; color: #333;">
+            <p style="margin-bottom: 25px; font-weight: 600;">
+                O corpo perfeito é aquele que te faz entrar numa sala e todo mundo parar pra olhar.
+            </p>
+            
+            <p style="margin-bottom: 25px;">
+                É aquele corpo que te faz calar a boca de quem um dia te chamou de "reta", "sem curvas" ou disse que "nunca vais ter bunda de verdade".
+            </p>
+            
+            <p style="margin-bottom: 25px; font-weight: 600;">
+                O corpo perfeito não é feito com produtos perigosos, nem com procedimentos arriscados.
+            </p>
+            
+            <p style="margin-bottom: 30px;">
+                É construído com foco, suor, treino certo e um plano pensado <span style="color: #FF8C00; font-weight: 600;">especificamente para ti</span>.
+            </p>
+            
+            <ul style="border-left: 3px solid #FF8C00; padding-left: 20px; margin: 40px 0;">
+                <li style="margin-bottom: 15px;">Quantas vezes te sentiste desconfortável ao vestir uma calça justa?</li>
+                <li style="margin-bottom: 15px;">Quantas vezes te comparaste com outras mulheres nas redes sociais?</li>
+                <li style="margin-bottom: 15px;">Quantas vezes ouviste "piadas" que doeram mais que pancada?</li>
+            </ul>
+            
+            <p style="font-size: 1.2rem; font-weight: 700; color: #FF8C00; text-align: center; margin-bottom: 30px;">
+                Chega de adiar a vida que você merece.
+            </p>
+            
+            <!-- BOTÃO COM ANIMAÇÃO -->
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://pay.kuenha.com/8d314c10-4685-48b6-9ee6-deb49c97f02a" 
+                   style="background: #25D366; 
+                          color: white; 
+                          padding: 16px 40px; 
+                          font-size: 1.1rem; 
+                          font-weight: 700; 
+                          text-decoration: none; 
+                          border-radius: 50px; 
+                          display: inline-block; 
+                          box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); 
+                          transition: all 0.3s ease;
+                          animation: pulse-green 2s infinite;">
+                    COMPRAR AGORA!
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* ANIMAÇÃO PERSONALIZADA PARA O BOTÃO VERDE */
+    @keyframes pulse-green {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        50% {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+    }
+</style>
+
+<section id="faq" style="background-color: #f9f9f9; padding: 40px 20px; font-family: Arial, sans-serif;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h2 style="text-align: center; color: #d63384; font-size: 28px; margin-bottom: 30px;">FAQ – Perguntas Frequentes</h2>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>1. Preciso de ir ao ginásio para fazer os treinos do eBook?</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div class="faq-answer">
+        Não. Todos os exercícios são pensados para serem feitos <strong>em casa</strong>, com ou sem acessórios simples. Nada de desculpas!
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>2. Nunca treinei antes, será que vou conseguir?</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div class="faq-answer">
+        Sim! O eBook é feito para <strong>iniciantes e intermediárias</strong>, com explicações claras. Vais evoluir no teu ritmo.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>3. Em quanto tempo começo a ver resultados?</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div class="faq-answer">
+        Com consistência, em 3 a 4 semanas já vais notar diferenças reais no formato do teu corpo. Mas lembra: teu corpo muda com tua disciplina.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>4. Esse método é mesmo seguro?</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div class="faq-answer">
+        100%. Aqui não usamos substâncias perigosas nem indicamos atalhos arriscados. É tudo natural, testado e pensado para mulheres reais.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>5. E se eu não gostar do conteúdo?</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div class="faq-answer">
+        Confio tanto no que estás prestes a receber que ofereço garantia de satisfação. Se aplicares o método e não veres resultado, chama-me.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>6. Posso pagar via referência,multicaixa Express ou VISA?</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div class="faq-answer">
+       Sim! O pagamento é feito de forma simples, basta colocar as informações pedidas, não tenha medo é tudo de forma segura.
+      </div>
+    </div>
+<div class="faq-item">
+  <div class="faq-question" onclick="toggleFAQ(this)">
+    <span>8. Como irei receber o eBook depois do pagamento?</span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="faq-answer">
+    Após o pagamento, vais receber o eBook direitamente no teu e-mail. Tudo de forma rápida e prática!
+  </div>
+</div>
+        </div>
+        </div>
+  <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <span>8. Esse eBook serve para mulheres magras ou só para mulheres gordas?</span>
+        <span class="arrow">▶</span>
+      </div>
+      <div class="faq-answer">
+        Serve para ambas! Se queres aumentar o bumbum, ganhar forma e deixar teu corpo mais bonito, este eBook é pra ti — seja qual for teu peso hoje.
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #333;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+      color: orange;
+      font-size: 18px;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #555;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .arrow {
+      transform: rotate(90deg);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+
+  <script>
+    function toggleFAQ(element) {
+      const item = element.parentElement;
+      item.classList.toggle("active");
+    }
+  </script>
+</section>
+
+<style>
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px) {
+        .section > div {
+            flex-wrap: wrap !important;
+        }
+        .section > div > div {
+            min-width: 100% !important;
+        }
+        .section > div > div:last-child {
+            margin-top: 40px;
+        }
+    }
+</style>
+            </div>
+        </div>
+    </section>
+    <!-- SEÇÃO DE OFERTA ATUALIZADA -->
+<section id="oferta" style="background: #000; padding: 70px 20px; color: white;">
+    <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 50px;">
+        <!-- NOVO EBOOK (LADO ESQUERDO) -->
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+            <img src="https://i.ibb.co/zH7PZQ4V/ebook-bonus.png" alt="Jejum Intermitente" 
+                 style="max-width: 280px; border-radius: 10px; border: 3px solid #FF8C00; box-shadow: 0 10px 20px rgba(255,140,0,0.2);">
+            <p style="margin-top: 15px; font-size: 1.1rem; color: #FF8C00;">BÔNUS EXCLUSIVO</p>
+        </div>
+
+        <!-- OFERTA (LADO DIREITO) -->
+        <div style="flex: 1; min-width: 300px;">
+            <h2 style="font-family: 'Poppins', sans-serif; font-size: 2rem; margin-bottom: 20px; color: white;">
+                OFERTA <span style="color: #FF8C00;">IMPERDÍVEL</span>
+            </h2>
+            
+            <p style="font-size: 1.2rem; margin-bottom: 10px;">Pague 1 e leve os 2!</p>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin: 25px 0;">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                    <div style="text-decoration: line-through; color: #aaa;">12.500Kz</div>
+                    <div style="font-size: 1.8rem; font-weight: 800; color: #25D366;">5.500Kz</div>
+                </div>
+                <p style="font-size: 0.9rem; color: #aaa;">Aproveite antes que o tempo acabe!</p>
+            </div>
+            
+            <p style="margin-bottom: 25px; font-size: 1.1rem;">
+                Leve o <strong>Método Corpo Perfeito</strong> + <strong style="color: #FF8C00;">Guia de Nutrição Avançada</strong>
+            </p>
+            
+            <a href="https://pay.kuenha.com/8d314c10-4685-48b6-9ee6-deb49c97f02a" style="background: #25D366; color: white; padding: 18px 40px; font-size: 1.2rem; font-weight: 700; text-decoration: none; border-radius: 50px; display: inline-block; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); transition: all 0.3s ease;">
+                QUERO APROVEITAR ESTA OFERTA 
+            </a>
+            
+            <div style="margin-top: 30px; display: flex; align-items: center; gap: 10px;">
+                <img src="https://i.ibb.co/rfN5QJT4/selo-garantia.png" style="width: 50px;">
+                <span style="font-size: 0.9rem;">Garantia de 7 dias ou seu dinheiro de volta</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="info" style="background-color: #222; color: #fff; padding: 40px 20px; font-family: Arial, sans-serif; font-size: 14px;">
+  <div style="max-width: 800px; margin: 0 auto;">
+
+    <h3 style="text-align: center; margin-bottom: 30px; font-size: 20px;">Informações Legais e de Suporte</h3>
+
+    <p><strong>Termos de Uso:</strong> Ao adquirir este eBook, o comprador concorda em utilizar o conteúdo apenas para fins pessoais. A distribuição ou revenda não autorizada é proibida.</p>
+
+    <p><strong>Política de Privacidade:</strong> Os teus dados estarão sempre protegidos. Não partilhamos informações pessoais com terceiros. Tudo é feito com responsabilidade e sigilo.</p>
+
+    <p><strong>Garantia:</strong> Acreditamos tanto neste conteúdo que oferecemos garantia. Se aplicares os métodos e não tiveres resultados, entra em contacto connosco.</p>
+
+    <p><strong>Suporte:</strong> Qualquer dúvida, ajuda ou problema com o acesso? Fala connosco pelo WhatsApp ou e-mail. Estamos aqui para ti!</p>
+
+    <p style="margin-top: 30px; text-align: center; font-size: 12px; color: #bbb;">© 2025 Corpo Perfeito – Todos os direitos reservados.</p>
+
+  </div>
+</section>
+
+<style>
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px) {
+        #oferta > div {
+            flex-direction: column;
+            gap: 30px !important;
+        }
+        #oferta img {
+            max-width: 200px !important;
+        }
+    }
+</style>
+
+
+
+
+    <!-- NOTIFICAÇÃO -->
+    <div class="notification" id="notification">
+        <strong>Maria</strong> acabou de comprar!
+    </div>
+
+    <!-- WHATSAPP FIXO -->
+    <a href="https://wa.me/5511999999999?text=Quero%20comprar%20o%20Método%20Corpo%20Perfeito" class="whatsapp-float">
+        <img src="https://i.ibb.co/8LhMn93G/whatsapp-icon.png" alt="WhatsApp">
+    </a>
+
+    <script>
+        // TIMER DE ESCASSEZ
+        function startTimer() {
+            let minutes = 9;
+            let seconds = 59;
+            const timer = document.getElementById('timer');
+            
+            const interval = setInterval(() => {
+                seconds--;
+                
+                if (seconds < 0) {
+                    minutes--;
+                    seconds = 59;
+                }
+                
+                if (minutes < 0) {
+                    clearInterval(interval);
+                    timer.textContent = "00:00";
+                    document.querySelector('.discount-bar').innerHTML = 
+                        ' <strong>ÚLTIMAS UNIDADES!</strong> Oferta terminando!';
+                } else {
+                    timer.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                }
+            }, 1000);
+        }
+
+        // NOTIFICAÇÕES ALEATÓRIAS
+        function showNotifications() {
+            const messages = [
+                " <strong>Margarida</strong> garantiu seu desconto!",
+                " <strong>Ana</strong> comprou o Método!",
+                " <strong>Carla</strong>Aprovetou o desconto!",
+                " <strong>Fernanda</strong> comprou agora!"
+            ];
+            
+            const notification = document.getElementById('notification');
+            let index = 0;
+            
+            setInterval(() => {
+                notification.innerHTML = messages[index];
+                notification.classList.add('notification-visible');
+                
+                setTimeout(() => {
+                    notification.classList.remove('notification-visible');
+                }, 3000);
+                
+                index = (index + 1) % messages.length;
+            }, 8000);
+        }
+
+        // CARROSSEL AUTOMÁTICO
+        function initCarousel() {
+            const track = document.querySelector('.carousel-track');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+            let currentIndex = 0;
+            const slideCount = slides.length;
+
+            function goToSlide(index) {
+                track.style.transform = `translateX(-${index * 100}%)`;
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[index].classList.add('active');
+                currentIndex = index;
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                goToSlide(currentIndex);
+            }
+
+            setInterval(nextSlide, 5000);
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    goToSlide(parseInt(this.getAttribute('data-slide')));
+                });
+            });
+        }
+
+        // INICIAR TUDO
+        window.addEventListener('DOMContentLoaded', () => {
+            startTimer();
+            showNotifications();
+            initCarousel();
+        });
+    </script>
+</body>
+</html>
