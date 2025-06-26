@@ -607,8 +607,149 @@
         </div>
     </section>
 
-    <!-- SEÇÃO BÔNUS E PREÇO -->
+     <!-- SEÇÃO BÔNUS E PREÇO -->
     <section class="bonus-section">
         <div class="container">
             <h2>Garanta Agora e Receba um <span style="border-bottom: 3px solid #ff4757;">Bônus Exclusivo</span></h2>
-            <p>Além do Método Corpo Perfeito, vo
+            <p>Além do Método Corpo Perfeito, você receberá o <strong>Guia de Nutrição com Jejum Intermitente</strong>, um plano alimentar simples e eficaz para acelerar seus resultados!</p>
+            
+            <img 
+                src="https://i.ibb.co/zH7PZQ4V/ebook-bonus.png" 
+                alt="Capa do Guia de Nutrição com Jejum Intermitente" 
+                class="bonus-img"
+            >
+            
+            <div class="price-container">
+                <span class="old-price">8.500 Kz</span>
+                <span class="new-price">Por apenas 3.500 Kz</span>
+            </div>
+
+            <img 
+                src="https://i.ibb.co/rfN5QJT4/selo-garantia.png" 
+                alt="Selo de Garantia de 7 Dias" 
+                class="guarantee-img"
+            >
+            <p style="margin: 10px 0; font-size: 1rem; color: #333;">
+                <strong>12 Dias de Garantia:</strong> Não gostou? Devolveremos seu dinheiro!
+            </p>
+
+            <a href="https://pay.kuenha.com/8d314c10-4685-48b6-9ee6-deb49c97f02a" 
+   class="btn" 
+   onclick="fbq('track', 'InitiateCheckout');">
+   Aproveitar Oferta Agora!
+</a>
+<p style="margin-top: 15px; font-size: 0.9rem; color: #444;">
+    ⚠️ <strong>Atenção:</strong> Esta é uma oferta por tempo limitado! Não perca sua chance de transformar seu corpo e sua autoestima!
+</p>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <a href="/termos-de-uso">Termos de Uso</a> | 
+                <a href="/politica-de-privacidade">Política de Privacidade</a>
+            </p>
+            <p>Para dúvidas, entre em contato: <a href="mailto:agcorpoperfeito782@gmail.com">agcorpoperfeito782@gmail.com</a></p>
+            <p>© 2025 Método Corpo Perfeito. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- NOTIFLIX SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.6/dist/notiflix-aio-3.2.6.min.js"></script>
+    <script>
+        // Contador regressivo com localStorage
+        let time = localStorage.getItem('countdown') ? parseInt(localStorage.getItem('countdown')) : 1800;
+        const countdown = document.getElementById('countdown');
+        
+        const interval = setInterval(() => {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            
+            countdown.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            
+            if (time <= 0) {
+                clearInterval(interval);
+                document.querySelector('.alert-bar').textContent = "⏳ OFERTA ENCERRADA!";
+            } else {
+                time--;
+                localStorage.setItem('countdown', time);
+            }
+        }, 1000);
+
+        // Carrossel automático
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const offset = -index * 100;
+            slider.style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 3000);
+        showSlide(currentSlide);
+
+        // FAQ Acordeão
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Notiflix Configuração
+        Notiflix.Notify.init({
+            position: 'right-bottom',
+            width: '340px', /* Comprimento aumentado */
+            distance: '15px',
+            timeout: 5000,
+            fontSize: '12px', /* Fonte reduzida */
+            cssAnimationStyle: 'from-right',
+            plainText: false,
+            success: {
+                background: '#f0fff4',
+                textColor: '#1a1a1a',
+            }
+        });
+
+        // Função para Notificações
+        function initNotifications(names, actions, interval = 15000) {
+            if (!names || !names.length || !actions || !actions.length) {
+                console.error('Por favor, forneça arrays válidos para nomes e ações');
+                return;
+            }
+
+            function showRandomNotification() {
+                const name = names[Math.floor(Math.random() * names.length)];
+                const action = actions[Math.floor(Math.random() * actions.length)];
+                Notiflix.Notify.success(`<strong>${name}</strong> ${action}`);
+            }
+
+            setTimeout(showRandomNotification, 3000);
+            setInterval(showRandomNotification, interval);
+        }
+
+        // Inicializar Notificações
+        const clientes = ['Ana', 'Maria', 'Joana', 'Cláudia', 'Sofia'];
+        const acoes = [
+            'Garantiu seu desconto!',
+            'Aproveitou a oferta!',
+            'Realizou a compra agora!',
+            'Comprou a 2minutos!',
+            'Adquiriu sem o bônus!'
+        ];
+        initNotifications(clientes, acoes, 15000);
+    </script>
+</body>
+  </html>
