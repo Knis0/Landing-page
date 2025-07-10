@@ -43,7 +43,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 
     /* BARRA DE ESCASSEZ */
     .alert-bar {
-        background: #ff4757;
+        background: #cf2e2e;
         color: white;
         text-align: center;
         padding: 12px 0;
@@ -487,7 +487,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 <body>
 <!-- BARRA DE ESCASSEZ (TOP) -->
 <div class="alert-bar" aria-live="polite">
-    ÚLTIMAS 12 VAGAS DISPONÍVEIS - OFERTA TERMINA EM: <span id="countdown" style="color: #ffeb3b;">30:00</span>
+    ATENÇÃO: O MÉTODO ESTA ESGOTANDO! APROVEITE! <span id="countdown" style="color: #ffeb3b;">30:00</span>
 </div>
 
 <!-- SEÇÃO PRINCIPAL COM COPY ATRAENTE -->
@@ -504,7 +504,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
         
         
         <a href="#area-compra-destaque" class="btn" onclick="fbq('track', 'InitiateCheckout');">
-    Quero garantir minha vaga
+    QUERO APROVEITAR OFERTA!
 </a>
 
         <p style="margin-top: 15px; font-size: 0.9rem; color: #444;">
@@ -619,7 +619,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
         </div>
 
         <a href="https://finalize-sua-compra-online.onrender.com" class="btn" onclick="fbq('track', 'InitiateCheckout');">
-    Quero Meu eBook Agora!
+    QUERO O MÉTODO AGORA!
 </a>
 
         <p style="margin-top: 15px; font-size: 0.9rem; color: #444;">
@@ -672,7 +672,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
         <div id="area-compra-destaque">
             <div class="price-container">
                 <span class="old-price">8.500 Kz</span>
-                <span class="new-price">Por apenas 3.500 Kz</span>
+                <span class="new-price">POR APENAS 3.500 Kz</span>
             </div>
 
             <img src="https://i.ibb.co/PvRYWdmQ/Background-Eraser-20250710-214356014.png" 
@@ -685,12 +685,11 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
             <a href="https://finalize-sua-compra-online.onrender.com" 
                class="btn"
                onclick="fbq('track', 'InitiateCheckout');">
-               Aproveitar Oferta Agora!
+               COMPRA AGORA
             </a>
         </div>
     </div>
 </section>
-
 <!-- RODAPÉ -->
 <footer class="footer">
     <div class="container">
@@ -718,7 +717,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
         
         if (time <= 0) {
             clearInterval(interval);
-            document.querySelector('.alert-bar').textContent = "⏳ OFERTA ENCERRADA!";
+            document.querySelector('.alert-bar').textContent = "OFERTA ENCERRADA!";
         } else {
             time--;
             localStorage.setItem('countdown', time);
@@ -800,3 +799,4 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 </script>
 </body>
 </html>
+
