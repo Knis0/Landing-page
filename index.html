@@ -43,7 +43,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 
     /* BARRA DE ESCASSEZ */
     .alert-bar {
-        background: #cf2e2e;
+        background: #ff1212;
         color: white;
         text-align: center;
         padding: 12px 0;
@@ -65,7 +65,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 
     .hero h1 {
         font-size: 2.4rem;
-        color: #ff4757;
+        color: #ef9b1d;
         margin: 20px 0 15px;
         line-height: 1.3;
     }
@@ -78,42 +78,74 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
         font-weight: 500;
     }
 
-    .hero-img {
-        width: 100%;
-        max-width: 500px;
-        border-radius: 12px;
-        margin: 25px auto;
-        display: block;
-        box-shadow: 0 8px 25px rgba(255, 71, 87, 0.15);
-        border: 4px solid white;
-    }
+    .video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin-top: 1.5rem;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
-    .btn {
-        background: linear-gradient(to right, #ff4757, #ff6b81);
-        color: white;
-        border: none;
-        padding: 16px 45px;
-        border-radius: 50px;
-        font-weight: bold;
-        font-size: 1.2rem;
-        cursor: pointer;
-        margin: 15px 0;
-        transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
-        text-decoration: none;
-        display: inline-block;
-        animation: pulse 2s infinite, glow 1.5s infinite alternate;
-    }
+.btn {
+  background-color: #c62828;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 15px auto;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(198, 40, 40, 0.4);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  animation: pulse 2s infinite, glow 1.5s infinite alternate;
+  max-width: 90%;
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 600px) {
+  .btn {
+    font-size: 0.95rem;
+    padding: 10px 18px;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+  }
+}
+
+/* Animações */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 4px 15px rgba(198, 40, 40, 0.4); }
+  to   { box-shadow: 0 8px 25px rgba(198, 40, 40, 0.7); }
+}
 
     @keyframes pulse {
         0%, 100% { transform: scale(1); }
         50% { transform: scale(1.05); }
     }
 
-    @keyframes glow {
-        from { box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4); }
-        to { box-shadow: 0 8px 25px rgba(255, 71, 87, 0.7); }
-    }
+  @keyframes glow {
+    from { box-shadow: 0 4px 15px rgba(198, 40, 40, 0.4); }
+    to   { box-shadow: 0 8px 25px rgba(198, 40, 40, 0.7); }
+}
 
     .btn:hover {
         transform: translateY(-3px) scale(1.05);
@@ -198,7 +230,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 
     .ebook-section h2 {
         font-size: 2rem;
-        color: #ff4757;
+        color: #141414;
         margin-bottom: 20px;
     }
 
@@ -217,7 +249,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
     }
 
     .benefit-item {
-        background: #fff5f5;
+        background: #171717;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -225,13 +257,13 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 
     .benefit-item h3 {
         font-size: 1.3rem;
-        color: #ff4757;
+        color: #c87031;
         margin-bottom: 10px;
     }
 
     .benefit-item p {
         font-size: 1rem;
-        color: #555;
+        color: #bababa;
     }
 
     /* SEÇÃO FAQ (ACORDEÃO) */
@@ -243,7 +275,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 
     .faq-section h2 {
         font-size: 2rem;
-        color: #ff4757;
+        color: #171717;
         margin-bottom: 30px;
     }
 
@@ -297,19 +329,19 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
     /* SEÇÃO BÔNUS E PREÇO */
     .bonus-section {
         padding: 60px 0;
-        background: #fff;
+        background: #141313;
         text-align: center;
     }
 
     .bonus-section h2 {
         font-size: 2rem;
-        color: #ff4757;
+        color: #e27907;
         margin-bottom: 20px;
     }
 
     .bonus-section p {
         font-size: 1.2rem;
-        color: #555;
+        color: #b34e00;
         max-width: 700px;
         margin: 0 auto 30px;
     }
@@ -321,7 +353,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
         margin: 20px auto;
         display: block;
         box-shadow: 0 8px 25px rgba(255, 71, 87, 0.15);
-        border: 4px solid white;
+        border: 2px solid #8e4a00;
     }
 
     .guarantee-img {
@@ -337,27 +369,27 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 
     .old-price {
         font-size: 1.5rem;
-        color: #999;
+        color: #f8e3a9;
         text-decoration: line-through;
         margin-right: 15px;
     }
 
     .new-price {
         font-size: 2rem;
-        color: #ff4757;
+        color: #e27907;
         font-weight: bold;
     }
 
     /* RODAPÉ */
     .footer {
         padding: 40px 0;
-        background: #333;
+        background: #1d1d1d;
         color: white;
         text-align: center;
     }
 
     .footer a {
-        color: #ff4757;
+        color: #b16600;
         text-decoration: none;
         margin: 0 10px;
     }
@@ -487,7 +519,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 <body>
 <!-- BARRA DE ESCASSEZ (TOP) -->
 <div class="alert-bar" aria-live="polite">
-    ATENÇÃO: O MÉTODO ESTA ESGOTANDO! APROVEITE! <span id="countdown" style="color: #ffeb3b;">30:00</span>
+    ADQUIRA ANTES QUE O TEMPO ACABE! PARA GANHAR O BÔNUS <span id="countdown" style="color: #ffeb3b;">30:00</span>
 </div>
 
 <!-- SEÇÃO PRINCIPAL COM COPY ATRAENTE -->
@@ -495,34 +527,34 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
     <div class="container">
         
         
-        <h1>Método Corpo <span style="border-bottom: 3px solid #ff4757;">Perfeito</span></h1>
+        <h1>MÉTODO CORPO <span style="border-bottom: 3px solid #ff4757;">PERFEITO</span></h1>
         
-        <p class="subtitle">
-            <span style="font-weight: bold; color: #ff4757;">Descubra o Método</span> Que ajudou varias mulheres Magras ou acima do peso a modelar o seu Corpo, afinar a cintura, secar a barriga e aumentar seus glúteos <span style="font-style: italic;"></span>
-        </p>
-        
+       
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #444;">
+            ⚠️ <strong>Assista ao vídeo abaixo e descubra como conquistar o corpo dos sonhos com um método 100% em casa.  </strong> 
+            </p>
+            <div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/wEJLcfOP6MQ" 
+    title="VSL Método Corpo Perfeito" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+    </div>
         
         
         <a href="#area-compra-destaque" class="btn" onclick="fbq('track', 'InitiateCheckout');">
-    QUERO APROVEITAR OFERTA!
+    SIM, QUERO CONQUISTAR O CORPO DOS SONHOS!
 </a>
-
-        <p style="margin-top: 15px; font-size: 0.9rem; color: #444;">
-            ⚠️ <strong>Oferta com bônus e acompanhamento:</strong> disponível apenas até hoje às 23h59! Depois disso, o valor pode aumentar e o suporte será limitado.</p>
-            <img 
-            src="https://i.ibb.co/kVkHRmyF/prova-1.jpg" 
-            alt="Antes e depois de cliente do Método Corpo Perfeito" 
-            class="hero-img"
-            loading="lazy"
-        >
-    </div>
 </section>
 
 <!-- SEÇÃO DEPOIMENTOS (APENAS IMAGENS) -->
 <section class="depoimentos" style="padding: 60px 0; background: #fff;">
     <div class="container">
-        <h2 style="text-align: center; font-size: 2rem; color: #ff4757; margin-bottom: 40px;">
-            Elas começaram como você…
+        <h2 style="text-align: center; font-size: 2rem; color: #e48f06; margin-bottom: 40px;">
+            Você viu a ciência , agora veja depoimentos de clientes...
         </h2>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
@@ -550,7 +582,7 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
         </div>
 
         <p style="text-align: center; margin-top: 40px; font-size: 1.1rem; color: #555;">
-            Elas <strong style="color: #ff4757;">decidiram que a autoestima delas é o mais importante</strong> e você vai continuar igual?
+            Elas <strong style="color: #e48f06;">decidiram que a autoestima delas é o mais importante</strong> e você vai continuar igual?
         </p>
     </div>
 </section>
@@ -558,15 +590,30 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 <!-- SEÇÃO DEPOIMENTOS SOCIAIS EM SLIDE -->
 <section class="social-depoimentos">
     <div class="container">
-        <h2 style="text-align: center; font-size: 2rem; color: #ff4757; margin-bottom: 40px;">
-            Resultado das Nossas alunas!
+        <h2 style="text-align: center; font-size: 2rem; color: #e48f06; margin-bottom: 40px;">
+            Veja resultados das nossas alunas.
         </h2>
         <div class="slider-container">
             <div class="slider" id="slider">
                 <div class="slide">
                     <img 
-                        src="https://i.ibb.co/j9KJK2J0/Screenshot-20250630-000035.jpg" 
+                        src="https://i.ibb.co/0jDnmMy8/662ee48e3320ec6187a2ec643cffd618.jpg
+" 
                         alt="Depoimento social 1 do Método Corpo Perfeito"
+                        loading="lazy"
+                    >
+                </div>
+                <div class="slide">
+                    <img 
+                        src="https://i.ibb.co/k2cZsbfd/be0308fb47bc89dc0be15e7aacbdf740.jpg" 
+                        alt="Depoimento social 2 do Método Corpo Perfeito"
+                        loading="lazy"
+                    >
+                </div>
+                <div class="slide">
+                    <img 
+                        src="https://i.ibb.co/3Y5zCJTX/624fbb156ae4ebda044a07ca15c4eb1a.jpg" 
+                        alt="Depoimento social 2 do Método Corpo Perfeito"
                         loading="lazy"
                     >
                 </div>
@@ -579,17 +626,32 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
                 </div>
                 <div class="slide">
                     <img 
-                        src="https://i.ibb.co/zW2ZTrD8/Screenshot-20250629-235819.jpg" 
+                        src="https://i.ibb.co/wNNx53C0/6b494f26abebef7a2defced44b2e95d6.jpg" 
                         alt="Depoimento social 3 do Método Corpo Perfeito"
                         loading="lazy"
                     >
                 </div>
                 <div class="slide">
                     <img 
-                        src="https://i.ibb.co/SXQ0R1m7/prova-4.jpg" 
+                        src="https://i.ibb.co/TM0phSrt/ff5c4057bade98d8d7905ceee5fbd824.jpg" 
                         alt="Depoimento social 4 do Método Corpo Perfeito"
                         loading="lazy"
                     >
+                </div>
+                <div class="slide">
+                    <img 
+                        src="https://i.ibb.co/4nxbRpcR/6c8939cb5819272370909f498fa109dc.jpg" 
+                        alt="Depoimento social 4 do Método Corpo Perfeito"
+                        loading="lazy"
+                    >
+                    </div>
+                <div class="slide">
+                    <img 
+                        src="https://i.ibb.co/3Y5zCJTX/624fbb156ae4ebda044a07ca15c4eb1a.jpg" 
+                        alt="Depoimento social 4 do Método Corpo Perfeito"
+                        loading="lazy"
+                    >
+                </div>
                 </div>
             </div>
         </div>
@@ -599,43 +661,50 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 <!-- SEÇÃO O QUE VOCÊ VAI RECEBER -->
 <section class="ebook-section">
     <div class="container">
-        <h2>O QUE VOCÊ IRÁ APRENDER<span style="border-bottom: 3px solid #ff4757;"></span></h2>
+        <h2>Apresentando o Método Corpo Perfeito<span style="border-bottom: 3px solid #ff4757;"></span></h2>
         <p>O Método Corpo Perfeito é um ebook digital, fácil de acessar em qualquer lugar. No nosso eBook, você terá tudo o que precisa para alcançar o corpo que você sonha ter.
-        <strong></strong></p>
+        
+        <strong>Você terá acesso há:</strong></p>
         
         <div class="benefits-list">
             <div class="benefit-item">
-                <h3>Técnicas para Aumentar Glúteos</h3>
-                <p>Descubra os exercícios e movimentos que ativam os glúteos de forma natural, sem precisar de academia ou equipamentos caros.</p>
+                <h3>Cárdapio de nutrição</h3>
+                <p>Não basta treinar! Por isso, você também leva um cardápio completo para acompanhar o Método Corpo Perfeito com uma alimentação ideal.</p>
             </div>
             <div class="benefit-item">
-                <h3>Rotinas para Afinar a Cintura</h3>
-                <p>Aprenda como afinar a cintura e reduzir gordura localizada com treinos curtos e fáceis de fazer em casa.</p>
+                <h3>Rotina de treinos</h3>
+                <p>Com treinos rápidos e direcionados, você vai levantar o bumbum, definir os glúteos e conquistar uma cintura mais fina enquanto reduz a barriga.</p>
             </div>
             <div class="benefit-item">
-                <h3>Secar a Barriga</h3>
-                <p>Descubra treinos rápidos e certeiros que ativam a queima de gordura na barriga e ajudam a desenhar a musculatura abdominal mesmo sem equipamentos.</p>
+                <h3>Aulas práticas em vídeo</h3>
+                <p>Você não vai treinar sozinha! Siga cada movimento com vídeo aulas explicativas, aprenda a fazer corretamente e conquiste resultados muito mais rápido.
+</p>
             </div>
         </div>
+
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #444;">
+  <strong>Você deve estar pensando que o Método Corpo Perfeito deve custar uma fortuna,</strong><br>
+  afinal, é uma fórmula inédita e ainda oferece um bônus avaliado em<strong> 12.000 Kz</strong> que você podera adquirir por <strong> 0.00 Kz</strong> <br><br>
+  <strong>Mas a verdade é:</strong> ele está com um valor quase simbólico diante de tudo que proporciona.<br>
+  É a sua chance de transformar seu corpo gastando menos do que imagina!
+</p>
+    </div>
 
         <a href="https://finalize-sua-compra-online.onrender.com" class="btn" onclick="fbq('track', 'InitiateCheckout');">
     QUERO O MÉTODO AGORA!
 </a>
 
-        <p style="margin-top: 15px; font-size: 0.9rem; color: #444;">
-            ⚠️ <strong>Atenção:</strong> Garanta sua vaga antes que a oferta termine!
-        </p>
-    </div>
+
 </section>
 
 <!-- SEÇÃO FAQ (ACORDEÃO) -->
 <section class="faq-section">
     <div class="container">
-        <h2>Perguntas Frequentes</h2>
+        <h2>Suas pergunta tem resposta</h2>
         <div class="faq-item">
-            <h3>Como faço para adquirir?</h3>
+            <h3>Após eu comprar, como irei receber?</h3>
             <div class="faq-answer">
-                <p>Para adquirir basta clicar em Quero meu ebook, preencher as informações(100% seguro) e logo em seguinte o ebook será enviado no seu e-mail.</p>
+                <p>Após a realização da compra o você receberá o link de acesso imédiato ao Método Corpo Perfeito</p>
             </div>
         </div>
         <div class="faq-item">
@@ -645,13 +714,13 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
             </div>
         </div>
         <div class="faq-item">
-            <h3>Em quanto tempo verei resultados?</h3>
+            <h3>Em quanto tempo notarei os resultados?</h3>
             <div class="faq-answer">
                 <p>Muitas alunas relatam mudanças visíveis em apenas 7 dias, com resultados incríveis em 21 dias, seguindo o método corretamente.</p>
             </div>
         </div>
         <div class="faq-item">
-            <h3>O suporte é realmente personalizado?</h3>
+            <h3>Terei o vosso acompanhamento?</h3>
             <div class="faq-answer">
                 <p>Sim! Nossa equipe está pronta para responder suas dúvidas e oferecer orientações personalizadas via e-mail ou WhatsApp.</p>
             </div>
@@ -662,8 +731,8 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 <!-- SEÇÃO BÔNUS - Versão corrigida -->
 <section class="bonus-section">
     <div class="container">
-        <h2>Compra Agora e Receba um <span style="border-bottom: 3px solid #ff4757;">Bônus Exclusivo</span></h2>
-        <p>Além do Método Corpo Perfeito, você receberá o <strong>Guia de Nutrição com Jejum Intermitente</strong>!</p>
+        <h2>Compre Agora e Receba um <span style="border-bottom: 3px solid #e4a003;">Bônus Exclusivo</span></h2>
+        <p>Além do Método Corpo Perfeito, você receberá o <strong>Guia de Nutrição com Jejum Intermitente<strong> Por 0,0Kzs</p>
         
         <img src="https://i.ibb.co/zH7PZQ4V/ebook-bonus.png" 
              alt="Bônus" class="bonus-img" loading="lazy">
@@ -671,25 +740,26 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
         <!-- ÁREA DE COMPRA COM SCROLL CORRIGIDO -->
         <div id="area-compra-destaque">
             <div class="price-container">
-                <span class="old-price">8.500 Kz</span>
-                <span class="new-price">POR APENAS 3.500 Kz</span>
+                <span class="old-price">8.790Kzs</span>
+                <span class="new-price">POR APENAS 3.500Kzs</span>
             </div>
 
             <img src="https://i.ibb.co/PvRYWdmQ/Background-Eraser-20250710-214356014.png" 
                  alt="Garantia" class="guarantee-img" loading="lazy">
                  
-            <p style="margin: 10px 0; font-size: 1rem; color: #333;">
-                <strong>30 Dias de Garantia:</strong> Não gostou? Devolveremos seu dinheiro!
+            <p style="margin: 10px 0; font-size: 1rem; color: #e9e3e3;">
+                </strong></strong>Acreditamos tanto no nosso produto que você terá a SUPER GARANTIA de 30 dias
             </p>
 
             <a href="https://finalize-sua-compra-online.onrender.com" 
                class="btn"
                onclick="fbq('track', 'InitiateCheckout');">
-               COMPRA AGORA
+               JÁ DECIDI! VOU COMPRAR.
             </a>
         </div>
     </div>
 </section>
+
 <!-- RODAPÉ -->
 <footer class="footer">
     <div class="container">
@@ -799,4 +869,3 @@ src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"
 </script>
 </body>
 </html>
-
